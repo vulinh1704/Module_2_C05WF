@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng quan Javascript</title>
+
+</head>
+
+<body>
+
+
+    
+    <!-- Id là duy nhất giữa các phần  -->
+     <input type="text" placeholder="Nhập dữ liệu" id="data">
+     <button onclick="layDuLieu()">Nhấn</button>
+     <h3 id="text"></h3>
+
+    <script>
+        // Khai báo tính năng tự tạo
+        function layDuLieu() {
+           let duLieu = document.getElementById("data").value; // Lấy dữ liệu ô input có id là "data" và cho biến duLieu cầm
+           document.getElementById("text").innerHTML = duLieu; // Hiển thị dữ liệu vừa nhập lên thẻ h3 có id là text 
+        }
+        
+        // Nhập xuất dữ liệu trong JS;
+        // let name = prompt("Nhập vào đi em ơi");
+        // let age = +prompt("Nhập số "); // "10" => 10
+        // alert(4 + age); // 4 + 10 = 14
+        // alert("Tên bạn vừa nhập là " + name);
+
+        /*
+
+        ** Các cách nhập dữ liệu:
+        C1: Sử dụng prompt() : Hiển thị hộp thoại cho người dùng nhập 
+        C2: Sử dụng function để thông qua sự kiện HTML lấy dữ liệu
+        
+        _____________________________________________________
+        **Các cách xuất dữ liệu:
+        C1: alert("Nội dung") : Hiển thị lên hộp thoại
+        C2: console.log("Nội dung"): Hiển thị trong devTool (F12 => Inspect => Console)
+        C3: document.write("Nội dung"): Hiển thị trực tiếp lên web
+        C4: document.getElementById("<id>").innerHTML = "Nội dung";
+        _____________________________________________________
+        Demo:
+        // let name = "Vũ Linh"; // Ưu tiên dùng let
+        // var name2 = "Hoàng Lê";
+        // console.log(name);
+        // document.write("<h1>" + name + "</h1>");
+        // document.getElementById("text").innerHTML = name; // Lấy phần tử có id là text (h3 id = text bên trên) cho hiển thị "Vũ Linh "
+        */
+
+
+        // Tính tổng điểm văn toán anh của Hoàng
+        // để tương tác với dữ liệu trong JS chúng ta có biến (Là tên đại diện cho giá trị trong JS)
+        // let <tên biến> = <giá trị>
+        // let diemVan = 8;
+        // let diemToan = 10;
+        // let dienAnh = 20;
+        // let ten = "Hoàng"; // Giá trị là chuỗi (chữ) ở trong JS bắt buộc phải nằm trong "" | '' | ``
+        // let tongDiem = diemVan + diemToan + dienAnh;
+        // alert(ten + " có tổng điểm là: " + tongDiem); // CÓ thể nối chuỗi bằng dấu +
+
+        // Cho 2 số a = 10, b = 20, tính tổng, tích, thương của chúng và in ra
+        // let a = 10;
+        // let b = 20;
+        // let tong = a + b;
+        // let tich = a * b;
+        // let thuong = a / b;
+        // let soDu = b % a; // Chia lấy dư
+        // alert("Tổng là: " + tong);
+        // alert("Số dư: " + soDu);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Tên file Js:  Đặt tên tiếng Anh, tiếng Việt viết liền và không ký tự đặc biệt -->
+    <!-- Sử dụng thông qua các sự kiện HTML thường bắt đầu bằng on..: onClick, onChange, onMouseOver, onChange,.. -->
+    <!-- <button onclick="alert('Helo sử dụng sự kiện HTML')">Click me!</button> -->
+
+    <!-- External: Sử dụng file bên ngoài (có đuôi .js) -->
+    <!-- <script src="index.js"></script> -->
+    <!-- <script src="https://lib-online.demo.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js" integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- Sử dụng dụng cặp thẻ <script> -->
+    <!-- <script>
+        // Nên đặt ở dưới các thẻ các và ở cuối thẻ <body>
+        // Internal
+        alert("Hello C05WF")
+    </script> -->
+
+</body>
+
+</html>
