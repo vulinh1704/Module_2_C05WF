@@ -118,6 +118,138 @@ splice(): Có thể xóa, sửa, chèn, thêm phần tử vào trong mảng.
 // console.log(arr);
 
 
+// Mảng 2 chiều là mảng có các phần tử là các mảng con
+
+// let arr = [
+//     [5, 4, 54],
+//     [1, 4, 7],
+//     [76, 64, 35]
+// ];
+
+// console.log("Phần tử 0 của arr: ", arr[0][0]);
+// Vị trí số 64: [2][1]
+
+// for (let i = 0; i < arr.length; i++) { // Lấy ra các dòng
+//     console.log("Phần tử tại vị trí số " + i + " là : ", arr[i]);
+//     for (let j = 0; j < arr[i].length; j++) { // Lấy ra các cột trong dòng thứ i
+//         console.log("Phần tự tại hàng " + i + ", cột " + j + " là: " + arr[i][j]);
+//     }
+// }
+
+
+// In ra tổng các phần tử
+
+/*
+let arr = [
+    [5,  4,  54],
+    [1,  4,  7],
+    [76, 64, 35]
+];
+// 00 10 20 |  01 11 21 | 02 12 22
+// Tổng 2 đường chéo chính, 2 đường chéo phụ
+
+// Tổng các cột
+console.log("Tổng các cột: ");
+for (let i = 0; i < arr.length; i++) { // i = 0
+    let tongCot = 0;
+    for (let j = 0; j < arr[i].length; j++) { // 0 1 2
+        tongCot = tongCot + arr[j][i]
+    }
+    console.log("Tổng cột " + i + " :" + tongCot);
+}
+
+
+// -----------------------------------
+let tong = 0;
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+        tong += arr[i][j];
+    }
+}
+console.log("Tổng là : " + tong);
+// In ra các phần tử chẵn
+
+console.log("Các phần tử chẵn là: ");
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+        if (arr[i][j] % 2 === 0) {
+            console.log(arr[i][j]);
+        }
+    }
+}
+// In ra tổng của các hàng
+console.log("Tổng các dòng là: ");
+for (let i = 0; i < arr.length; i++) {
+    let tongHang = 0;
+    for (let j = 0; j < arr[i].length; j++) {
+        tongHang += arr[i][j];
+    }
+    console.log("Dòng " + i + " : " + tongHang);
+}
+*/
+
+// - * Tìm phần tử lớn thứ 2 trong mảng (nâng cao: 1 vòng lặp)
+/*
+let arr = [4, 5, 10, 6, 4];
+let max1 = arr[0];
+for(let i = 0; i < arr.length; i++) {
+    if(arr[i] > max1) {
+        max1 = arr[i];
+    }
+}
+
+let max2 = arr[0];
+for(let i = 0; i < arr.length; i++) {
+    if(arr[i] > max2 && arr[i] < max1) {
+        max2 = arr[i];
+    }
+}
+console.log("Max 2 là: " + max2);
+// */
+
+// let arr = [4, 5, 10, 6, 4];
+// let max1 = arr[0];
+// let max2 = arr[0];
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > max1) {
+//         max2 = max1;
+//         max1 = arr[i];
+//     }
+//     if (arr[i] > max2 && arr[i] < max1) {
+//         max2 = arr[i];
+//     }
+// }
+
+// console.log(max2);
+
+let arr = [];
+let count = 1;
+while(count <= 5) {
+    let number =  prompt("Nhập phần tử: ")
+    arr.push(number);
+    count++;
+}
+
+let numberUser = prompt("Nhập phần tử muốn xóa: ");
+let index;
+for(let i = 0; i < arr.length; i++) {
+    if(arr[i] == numberUser) {
+        index = i;
+        break;
+    }
+}
+console.log("Mảng trước xóa: ", arr);
+for(let i = index; i < arr.length - 1; i++) {
+    arr[i] = arr[i + 1];
+}
+
+arr[arr.length - 1] = 0;
+console.log("Mảng sau xóa: ", arr);
+
+
+
+
+
 
 
 
