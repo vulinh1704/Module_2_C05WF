@@ -9,6 +9,12 @@ B3: Xác định phần tử HTML mà mình muốn tương tác
 */
 
 let list = ["Iphone", "Samsung", "Iphone 11"];
+let name = prompt("Nhập tên sản phẩm");
+for (let i = 0; i < list.length; i++) {
+    if (list[i].toLowerCase().includes(name.toLowerCase())) {
+        console.log(list[i]);
+    }
+}
 
 // Tìm kiếm gần đúng, tìm kiếm
 // Tìm hiểu thêm về local storage
