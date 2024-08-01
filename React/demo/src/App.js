@@ -1,10 +1,12 @@
 import { Country } from "./Country";
+import { Student } from "./Student";
 
 
 function App() {
   return (
     <>
-     <Country></Country>
+     {/* <Country></Country> */}
+     <Student></Student>
     </>
   );
 }
