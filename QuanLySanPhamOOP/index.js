@@ -19,9 +19,9 @@ function add() {
     document.getElementById("image").value = "";
 }
 
-
-function getAll() {
-    let list = store.getList();
+function getByName() {
+    let nameSearch = document.getElementById("name-search").value;
+    let list = store.getByNameContain(nameSearch);
     let html = ``;
     for (let i = 0; i < list.length; i++) {
         html = html + `
@@ -36,6 +36,59 @@ function getAll() {
       `
     }
     document.getElementById("list-product").innerHTML = html;
+}
+
+function getByPrice() {
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let list = store.getByPrice(from, to);
+    let html = ``;
+    for (let i = 0; i < list.length; i++) {
+        html = html + `
+         <tr>
+            <td>${list[i].id}</td>
+            <td>${list[i].name}</td>
+            <td>${list[i].price}</td>
+            <td><img src="${list[i].image}" alt="" style="width: 50px; height: 50px;"></td>
+            <td><button onclick="remove(${i})">Xóa</button></td>
+             <td><button onclick="showFormEdit(${i})">Sửa</button></td>
+        </tr>
+      `
+    }
+    document.getElementById("list-product").innerHTML = html;
+}
+
+function getAll() {
+    let list = store.getList();
+    let html = ``;
+    for (let i = 0; i < list.length; i++) {
+        html = html + `
+         <tr>
+            <td>${list[i].id}</td>
+            <td>${list[i].name}</td>
+            <td>${list[i].price}</td>
+            <td><img src="${list[i].image}" alt="" style="width: 50px; height: 50px;"></td>
+            <td><button onclick="remove(${i})">Xóa</button></td>
+             <td><button onclick="showFormEdit(${i})">Sửa</button></td>
+              <td><button onclick="showDetail(${i})">Chi tiết</button></td>
+        </tr>
+      `
+    }
+    document.getElementById("list-product").innerHTML = html;
+}
+
+function showDetail(index) {
+    let productDetail = store.getProductByIndex(index);
+    document.getElementById("product-detail").innerHTML = `
+        <h3>Detail</h3>
+        <h5>Id: ${productDetail.id}</h5>
+        <h5>Name: ${productDetail.name}</h5>
+        <h5>Price: ${productDetail.price}</h5>
+        <h5><img src="${productDetail.image}"></h5>
+    `
+    setTimeout(() => {
+        document.getElementById("product-detail").innerHTML = '';
+    }, 3000)
 }
 
 function showFormEdit(index) {
@@ -73,6 +126,8 @@ function remove(index) {
 }
 
 getAll();
+
+
 
 // window.location("index2.html")
 

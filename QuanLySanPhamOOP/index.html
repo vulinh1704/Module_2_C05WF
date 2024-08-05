@@ -6,6 +6,12 @@
     <title>Quản lý sản phẩm</title>
 </head>
 <body>
+    <h3>Tìm kiếm</h3>
+    <input type="text" id="name-search" placeholder="Search Name" oninput="getByName()">
+    <br>
+    <input type="number" id="from" placeholder="Từ">
+    <input type="number" id="to" placeholder="Đến">
+    <button onclick="getByPrice()">Tìm</button>
     <h3>Thêm sản phẩm</h3>
     <input type="number" id="id" placeholder="Nhập id">
     <input type="text" id="name" placeholder="Nhập tên">
@@ -22,13 +28,15 @@
             <th>Name</th>
             <th>Price</th>
             <th>Image</th>
-            <th colspan="2">Hành động</th>
+            <th colspan="3">Hành động</th>
         </tr>
         <tbody id="list-product">
             
         </tbody>
     </table>
-    
+    <div id="product-detail">
+        
+    </div>
     <script src="Product.js"></script>
     <script src="Store.js"></script>
     <script src="index.js"></script>

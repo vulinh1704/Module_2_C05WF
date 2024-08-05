@@ -43,6 +43,30 @@ class Store {
             this.listProduct = list;
         }
     }
+
+    getByNameContain(name) {
+        let newList = [];
+        for(let i = 0; i < this.listProduct.length; i++) {
+            let nameProduct = this.listProduct[i].name.toLowerCase();
+            let nameSearch = name.toLowerCase();
+            if(nameProduct.includes(nameSearch)) {
+                newList.push(this.listProduct[i]);
+            }
+        }
+        return newList;
+    }
+
+    getByPrice(from, to) {
+        let newList = [];
+        for(let i = 0; i < this.listProduct.length; i++) {
+            let priceProduct = this.listProduct[i].price;
+            if(priceProduct >= from && priceProduct <= to) {
+                newList.push(this.listProduct[i]);
+            }
+        }
+        return newList;
+    }
+
 }
 
 // Lấy => Get, Lưu => Set
